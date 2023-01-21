@@ -15,7 +15,7 @@ const ResumePage = () => {
   }
 
   return (
-    <div>
+    <div className='resume'>
       <Document file="assets/resume.pdf" onLoadSuccess={onDocumentLoadSuccess}>
         <Page pageNumber={pageNumber} />
       </Document>

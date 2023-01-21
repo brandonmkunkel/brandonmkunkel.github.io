@@ -6,32 +6,42 @@ import {
   Route,
   Routes
 } from "react-router-dom";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
 import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
 import ProjectsPage from "./pages/projects";
 import ResumePage from "./pages/resume";
 import NotFoundPage from "./pages/not_found";
-import SkillsPage from "./pages/skills";
-import ContactPage from "./pages/contact";
+import DrawerAppBar from "./components/appbar";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'light',
+  },
+});
 
 class App extends Component {
   render() {
     return (
-      <div style={{ userSelect: "text" }}>
-        <Router>  
-          <NavBarComponent />
-          <Routes>
-            <Route exact path="/" element={<HomePage />} />
-            <Route exact path="/about" element={<AboutPage />} />
-            <Route exact path="/projects" element={<ProjectsPage />} />
-            <Route exact path="/resume" element={<ResumePage />} />
-            <Route exact path="/skills" element={<SkillsPage />} />
-            <Route exact path="/contact" element={<ContactPage />} />
-            <Route exact path="/not_found" element={<NotFoundPage />} />
-            <Route path="*" element={<NotFoundPage />}/>
-          </Routes> 
-          <FooterComponent/>
-        </Router>
+      <div>
+        <ThemeProvider theme={darkTheme}>
+          <CssBaseline />
+          <Router>  
+            <NavBarComponent />
+            {/* <DrawerAppBar /> */}
+            <Routes>
+              <Route exact path="/" element={<HomePage />} />
+              <Route exact path="/about" element={<AboutPage />} />
+              <Route exact path="/projects" element={<ProjectsPage />} />
+              <Route exact path="/resume" element={<ResumePage />} />
+              <Route exact path="/not_found" element={<NotFoundPage />} />
+              <Route path="*" element={<NotFoundPage />}/>
+            </Routes> 
+            <FooterComponent/>
+          </Router>
+        </ThemeProvider>
       </div>
     );
   }

@@ -45,3 +45,10 @@ code {
 .footer {
   justify-content: center !important;
 }
+
+
+.resume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

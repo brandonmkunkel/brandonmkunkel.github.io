@@ -1,10 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
+import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
-import "font-awesome/css/font-awesome.css";
+import { createRoot } from 'react-dom/client';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const container = document.getElementById('app');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(<App tab="home" />);
 
 console.log('public url: ', process.env.PUBLIC_URL)
