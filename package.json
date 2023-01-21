@@ -8,6 +8,9 @@
   },
   "homepage": "https://brandonmkunkel.github.io/",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.5",
     "bootstrap": "^5.2.3",
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
