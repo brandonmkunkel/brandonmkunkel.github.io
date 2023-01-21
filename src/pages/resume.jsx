@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useState } from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
+
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import 'react-pdf/dist/esm/Page/TextLayer.css';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const ResumePage = () => {
+  const [, setNumPages] = useState(null);
+  const [pageNumber, ] = useState(1);
+
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+  }
+
   return (
-    <div className="navbar-brand">
-      <i className="fa fa-shopping-cart fa-lg m-2" aria-hidden="true" />
-      <span
-        className="badge badge-pill badge-info m-2"
-        style={{ width: 50, fontSize: "24px" }}
-      >
-      </span>
-      Items
+    <div>
+      <Document file="assets/resume.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+        <Page pageNumber={pageNumber} />
+      </Document>
     </div>
   );
 };

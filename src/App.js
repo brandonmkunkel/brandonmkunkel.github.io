@@ -7,6 +7,7 @@ import {
   Routes
 } from "react-router-dom";
 import HomePage from "./pages/home";
+import AboutPage from "./pages/about";
 import ProjectsPage from "./pages/projects";
 import ResumePage from "./pages/resume";
 import NotFoundPage from "./pages/not_found";
@@ -16,11 +17,12 @@ import ContactPage from "./pages/contact";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div style={{ userSelect: "text" }}>
         <Router>  
           <NavBarComponent />
           <Routes>
             <Route exact path="/" element={<HomePage />} />
+            <Route exact path="/about" element={<AboutPage />} />
             <Route exact path="/projects" element={<ProjectsPage />} />
             <Route exact path="/resume" element={<ResumePage />} />
             <Route exact path="/skills" element={<SkillsPage />} />

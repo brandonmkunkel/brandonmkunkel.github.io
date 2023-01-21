@@ -8,21 +8,22 @@
   },
   "homepage": "https://brandonmkunkel.github.io/",
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
     "react": "^16.14.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^16.14.0",
-    "react-pdf-viewer": "^0.1.0",
+    "react-pdf": "^6.2.2",
     "react-router-dom": "^6.6.2",
-    "react-scripts": "2.1.8",
+    "react-scripts": "^5.0.1",
     "typescript": "^3.9.10"
   },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts start && cp -R public\\static build\\static",
+    "build": "react-scripts build && cp -R public\\static build\\static",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

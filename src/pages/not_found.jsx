@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const NotFoundPage = () => {
   return (
@@ -8,9 +7,6 @@ const NotFoundPage = () => {
       <div>
         Oh hey there, where do you think you are going
       </div>
-      <Link to='/'>Home</Link>
-      <Link to='/blog'>Blog</Link>
-      <Link to='/contact'>Contact</Link>
     </div>
   );
 };
