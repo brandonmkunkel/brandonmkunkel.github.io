@@ -35,7 +35,7 @@ jobs:
           node-version: '19.x'
       - name: NPM clean install dependencies
         run: npm ci
-      - name: NPM builb
+      - name: NPM build
         run: npm run build --if-present
           
       - name: Setup Pages

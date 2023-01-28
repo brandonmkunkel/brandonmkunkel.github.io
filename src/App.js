@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import NavBarComponent from "./components/navbar";
-import FooterComponent from "./components/footer";
 import {
   BrowserRouter as Router,
   Route,
@@ -9,12 +7,15 @@ import {
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
+// import NavBarComponent from "./components/navbar";
+import FooterComponent from "./components/footer";
+import DrawerAppBar from "./components/appbar";
+
 import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
 import ProjectsPage from "./pages/projects";
 import ResumePage from "./pages/resume";
 import NotFoundPage from "./pages/not_found";
-// import DrawerAppBar from "./components/appbar";
 
 const darkTheme = createTheme({
   palette: {
@@ -29,8 +30,8 @@ class App extends Component {
         <ThemeProvider theme={darkTheme}>
           <CssBaseline />
           <Router>  
-            <NavBarComponent />
-            {/* <DrawerAppBar /> */}
+            {/* <NavBarComponent /> */}
+            <DrawerAppBar />
             <Routes>
               <Route exact path="/" element={<HomePage />} />
               <Route exact path="/about" element={<AboutPage />} />
