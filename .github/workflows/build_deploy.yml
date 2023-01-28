@@ -1,4 +1,4 @@
-name: Build and deploy React application to Github pages
+name: Build and Deploy
 
 on:
   # Runs on pushes targeting the default branch

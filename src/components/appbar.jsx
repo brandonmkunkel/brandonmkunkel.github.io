@@ -15,7 +15,12 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navMap = {
+  'Home': "/",
+  'About': "/about", 
+  'Projects': "/projects", 
+  'Resume': "/resume", 
+};
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -28,14 +33,14 @@ function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Brandon Kunkel
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+         {Object.entries(navMap).map( ([key, value]) => (
+          <ListItem key={key} disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }}  to={value}>
+              <ListItemText primary={key} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -64,12 +69,12 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            Brandon Kunkel
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
+            {Object.entries(navMap).map( ([key, value]) => (
+              <Button key={key} sx={{ color: '#fff' }} to={value}>
+                {key}
               </Button>
             ))}
           </Box>

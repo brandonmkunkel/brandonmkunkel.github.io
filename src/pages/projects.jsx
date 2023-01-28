@@ -3,7 +3,11 @@ import React from "react";
 const ProjectsPage = () => {
   return (
     <React.Fragment>
-      Hi my name is Projects Page
+      Learn about some of my interesting projects
+
+      NASA Student launch computer vision
+      Genetic Fuzzy AI
+      AutoCall app
     </React.Fragment>
   );
 };

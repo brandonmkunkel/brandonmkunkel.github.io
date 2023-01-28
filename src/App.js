@@ -7,7 +7,6 @@ import {
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-// import NavBarComponent from "./components/navbar";
 import FooterComponent from "./components/footer";
 import DrawerAppBar from "./components/appbar";
 
@@ -30,7 +29,6 @@ class App extends Component {
         <ThemeProvider theme={darkTheme}>
           <CssBaseline />
           <Router>  
-            {/* <NavBarComponent /> */}
             <DrawerAppBar />
             <Routes>
               <Route exact path="/" element={<HomePage />} />
