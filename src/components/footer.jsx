@@ -1,10 +1,11 @@
 import React from "react";
+import '../App.css';
 
 // stateless footer
 const FooterComponent = () => {
   return (
     <React.Fragment>
-      <footer style={{ padding: '15px', textAlign: 'center', backgroundColor: 'rgba(0, 0, 0, 0.03)' }}>
+      <footer className="footer">
       Copyright © 2023: &nbsp;
         <a href='https://brandonmkunkel.github.io/'>
           Brandon Kunkel

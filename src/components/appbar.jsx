@@ -13,6 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { LightModeButton } from '../theme';
 
 const drawerWidth = 240;
 const navMap = {
@@ -37,9 +38,9 @@ function DrawerAppBar(props) {
       </Typography>
       <Divider />
       <List>
-         {Object.entries(navMap).map( ([key, value]) => (
+         {Object.entries(navMap).map( ([key, value]) => ( 
           <ListItem key={key} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}  to={value}>
+            <ListItemButton sx={{ textAlign: 'center' }} href={value}>
               <ListItemText primary={key} />
             </ListItemButton>
           </ListItem>
@@ -64,6 +65,9 @@ function DrawerAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
+          <Typography variant="h6" sx={{ my: 2, flexGrow: 1, display: { xs: 'block', sm: 'none' } }}>
+            Brandon Kunkel
+          </Typography>
           <Typography
             variant="h6"
             component="div"
@@ -73,11 +77,12 @@ function DrawerAppBar(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {Object.entries(navMap).map( ([key, value]) => (
-              <Button key={key} sx={{ color: '#fff' }} to={value}>
+              <Button key={key} sx={{ color: '#fff' }} href={value}>
                 {key}
               </Button>
             ))}
           </Box>
+          <LightModeButton/>
         </Toolbar>
       </AppBar>
       <Box component="nav">
@@ -97,7 +102,7 @@ function DrawerAppBar(props) {
           {drawer}
         </Drawer>
       </Box>
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" sx={{ p: 0 }}>
         <Toolbar />
       </Box>
     </Box>

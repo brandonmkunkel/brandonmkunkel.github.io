@@ -3,6 +3,7 @@ import { Document, Page, pdfjs } from 'react-pdf';
 
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
+import PageBody from '../components/page_body';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -15,11 +16,13 @@ const ResumePage = () => {
   }
 
   return (
-    <React.Fragment className='resume'>
-      <Document file="assets/resume.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-        <Page pageNumber={pageNumber} />
-      </Document>
-    </React.Fragment>
+    <PageBody>
+      <div id="resume">
+        <Document file="assets/resume.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+          <Page pageNumber={pageNumber} />
+        </Document>
+      </div>
+    </PageBody>
   );
 };
 

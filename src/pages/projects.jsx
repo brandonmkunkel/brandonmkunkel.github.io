@@ -1,14 +1,15 @@
 import React from "react";
+import PageBody from "../components/page_body";
 
-const ProjectsPage = () => {
+const ProjectsPage = (Comp) => {
   return (
-    <React.Fragment>
+    <PageBody>
       Learn about some of my interesting projects
 
       NASA Student launch computer vision
       Genetic Fuzzy AI
       AutoCall app
-    </React.Fragment>
+    </PageBody>
   );
 };
 

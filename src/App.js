@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  HashRouter,
+  BrowserRouter,
   Route,
   Routes
 } from "react-router-dom";
@@ -15,20 +15,16 @@ import AboutPage from "./pages/about";
 import ProjectsPage from "./pages/projects";
 import ResumePage from "./pages/resume";
 import NotFoundPage from "./pages/not_found";
+import {darkTheme, ToggleColorMode} from "./theme";
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'light',
-  },
-});
 
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
+      <React.StrictMode>
         <ThemeProvider theme={darkTheme}>
           <CssBaseline />
-          <HashRouter>  
+          <BrowserRouter>  
             <DrawerAppBar />
             <Routes>
               <Route exact path="/" element={<HomePage />} />
@@ -39,9 +35,9 @@ class App extends Component {
               <Route path="*" element={<NotFoundPage />}/>
             </Routes> 
             <FooterComponent/>
-          </HashRouter>
+          </BrowserRouter>
         </ThemeProvider>
-      </React.Fragment>
+      </React.StrictMode>
     );
   }
 }
