@@ -14,7 +14,7 @@ import AboutPage from "./pages/about";
 import ProjectsPage from "./pages/projects";
 import ResumePage from "./pages/resume";
 import NotFoundPage from "./pages/not_found";
-import DrawerAppBar from "./components/appbar";
+// import DrawerAppBar from "./components/appbar";
 
 const darkTheme = createTheme({
   palette: {
