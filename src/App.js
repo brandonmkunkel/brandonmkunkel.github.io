@@ -4,7 +4,6 @@ import {
   Route,
   Routes
 } from "react-router-dom";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import FooterComponent from "./components/footer";
@@ -15,16 +14,16 @@ import AboutPage from "./pages/about";
 import ProjectsPage from "./pages/projects";
 import ResumePage from "./pages/resume";
 import NotFoundPage from "./pages/not_found";
-import {darkTheme, ToggleColorMode} from "./theme";
+import {ColorModeToggler} from "./theme";
 
 
 class App extends Component {
   render() {
     return (
       <React.StrictMode>
-        <ThemeProvider theme={darkTheme}>
-          <CssBaseline />
+        <ColorModeToggler>
           <BrowserRouter>  
+            <CssBaseline />
             <DrawerAppBar />
             <Routes>
               <Route exact path="/" element={<HomePage />} />
@@ -36,7 +35,7 @@ class App extends Component {
             </Routes> 
             <FooterComponent/>
           </BrowserRouter>
-        </ThemeProvider>
+        </ColorModeToggler>
       </React.StrictMode>
     );
   }

@@ -7,11 +7,16 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Tooltip from '@mui/material/Tooltip';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
-export const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
-});
+// const darkTheme = createTheme({
+//   palette: {
+//     mode: 'dark',
+//   },
+// });
+// const lightTheme = createTheme({
+//   palette: {
+//     mode: 'light',
+//   },
+// });
 
 export function LightModeButton() {
   const theme = useTheme();
@@ -27,7 +32,7 @@ export function LightModeButton() {
   );
 }
 
-export function ToggleColorMode(Component) {
+export function ColorModeToggler({children}) {
   const [mode, setMode] = React.useState('dark');
   const colorMode = React.useMemo(
     () => ({
@@ -51,7 +56,7 @@ export function ToggleColorMode(Component) {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-        <Component />
+        {children}
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
