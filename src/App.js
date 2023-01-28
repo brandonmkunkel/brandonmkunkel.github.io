@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Route,
   Routes
 } from "react-router-dom";
@@ -25,10 +25,10 @@ const darkTheme = createTheme({
 class App extends Component {
   render() {
     return (
-      <React.Fragment style={{userSelect: "text"}}>
+      <React.Fragment>
         <ThemeProvider theme={darkTheme}>
           <CssBaseline />
-          <Router>  
+          <HashRouter>  
             <DrawerAppBar />
             <Routes>
               <Route exact path="/" element={<HomePage />} />
@@ -39,7 +39,7 @@ class App extends Component {
               <Route path="*" element={<NotFoundPage />}/>
             </Routes> 
             <FooterComponent/>
-          </Router>
+          </HashRouter>
         </ThemeProvider>
       </React.Fragment>
     );
