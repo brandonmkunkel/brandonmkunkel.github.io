@@ -3,7 +3,7 @@ import React from "react";
 // Stateless project component
 export const Project = ({title, text, image}) => {
   return (
-    <div>
+    <React.Fragment>
       <h2>{title}</h2>
       
       <div>
@@ -11,7 +11,7 @@ export const Project = ({title, text, image}) => {
       </div>
       
       <img src={image}></img>
-    </div>
+    </React.Fragment>
   );
 };
 

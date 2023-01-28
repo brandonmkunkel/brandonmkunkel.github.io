@@ -25,7 +25,7 @@ const darkTheme = createTheme({
 class App extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment style={{userSelect: "text"}}>
         <ThemeProvider theme={darkTheme}>
           <CssBaseline />
           <Router>  
@@ -42,7 +42,7 @@ class App extends Component {
             <FooterComponent/>
           </Router>
         </ThemeProvider>
-      </div>
+      </React.Fragment>
     );
   }
 }

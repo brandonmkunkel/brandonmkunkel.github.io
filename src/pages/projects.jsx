@@ -2,9 +2,9 @@ import React from "react";
 
 const ProjectsPage = () => {
   return (
-    <div>
+    <React.Fragment>
       Hi my name is Projects Page
-    </div>
+    </React.Fragment>
   );
 };
 

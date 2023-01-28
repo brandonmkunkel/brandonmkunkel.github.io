@@ -15,11 +15,11 @@ const ResumePage = () => {
   }
 
   return (
-    <div className='resume'>
+    <React.Fragment className='resume'>
       <Document file="assets/resume.pdf" onLoadSuccess={onDocumentLoadSuccess}>
         <Page pageNumber={pageNumber} />
       </Document>
-    </div>
+    </React.Fragment>
   );
 };
 
