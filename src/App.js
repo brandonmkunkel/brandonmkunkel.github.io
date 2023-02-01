@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  BrowserRouter,
+  HashRouter as Router,
   Route,
   Routes
 } from "react-router-dom";
@@ -22,19 +22,19 @@ class App extends Component {
     return (
       <React.StrictMode>
         <ColorModeToggler>
-          <BrowserRouter>  
-            <CssBaseline />
+          <CssBaseline />
+          <Router basename="/">
             <DrawerAppBar />
             <Routes>
               <Route exact path="/" element={<HomePage />} />
-              <Route exact path="/about" element={<AboutPage />} />
-              <Route exact path="/projects" element={<ProjectsPage />} />
-              <Route exact path="/resume" element={<ResumePage />} />
-              <Route exact path="/not_found" element={<NotFoundPage />} />
-              <Route path="*" element={<NotFoundPage />}/>
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/resume" element={<ResumePage />} />
+              <Route path="/not_found" element={<NotFoundPage />} />
+              {/* <Route path="*" element={<NotFoundPage />}/> */}
             </Routes> 
             <FooterComponent/>
-          </BrowserRouter>
+          </Router>
         </ColorModeToggler>
       </React.StrictMode>
     );

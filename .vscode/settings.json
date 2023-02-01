@@ -1,15 +1,15 @@
 {
   // I want my default to be 4, but JavaScript/JSON to be 2
   "editor.tabSize": 4,
-  // "[javascript]": {
-  //   "editor.tabSize": 2
-  // },
-  // "[typescript]": {
-  //   "editor.tabSize": 2
-  // },
-  // "[typescriptreact]": {
-  //   "editor.tabSize": 2
-  // },
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2
+  },
   "[json]": {
     "editor.tabSize": 2
   },

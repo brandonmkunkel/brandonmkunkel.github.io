@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link as RouterLink } from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -38,10 +39,11 @@ function DrawerAppBar(props) {
       </Typography>
       <Divider />
       <List>
-         {Object.entries(navMap).map( ([key, value]) => ( 
-          <ListItem key={key} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }} href={value}>
-              <ListItemText primary={key} />
+         {Object.entries(navMap).map( ([page, route]) => ( 
+          <ListItem key={page} disablePadding>
+            {/* <Link primary={page} to={route}>{page}</Link> */}
+            <ListItemButton sx={{ textAlign: 'center' }} component={RouterLink} to={route} >
+              <ListItemText primary={page} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -76,9 +78,10 @@ function DrawerAppBar(props) {
             Brandon Kunkel
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {Object.entries(navMap).map( ([key, value]) => (
-              <Button key={key} sx={{ color: '#fff' }} href={value}>
-                {key}
+            {Object.entries(navMap).map( ([page, route]) => (
+              // <Link to={route}>{page}</Link>
+              <Button key={page} sx={{ color: '#fff' }} component={RouterLink} to={route}>
+                {page}
               </Button>
             ))}
           </Box>

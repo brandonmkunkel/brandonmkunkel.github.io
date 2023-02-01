@@ -1,6 +1,6 @@
 # Portfolio Site
 
-![example workflow](https://github.com/brandonmkunkel/brandonmkunkel.github.io/actions/workflows/build_deploy.yml/badge.svg)
+![Build and Deploy](https://github.com/brandonmkunkel/brandonmkunkel.github.io/actions/workflows/build_deploy.yml/badge.svg)
 ![License](https://img.shields.io/github/license/brandonmkunkel/brandonmkunkel.github.io)
 
 ## About
