@@ -31,7 +31,7 @@ class App extends Component {
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/resume" element={<ResumePage />} />
               <Route path="/not_found" element={<NotFoundPage />} />
-              {/* <Route path="*" element={<NotFoundPage />}/> */}
+              <Route path="*" element={<NotFoundPage />}/>
             </Routes> 
             <FooterComponent/>
           </Router>

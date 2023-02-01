@@ -1,14 +1,19 @@
 import React from "react";
 import PageBody from "../components/page_body";
+import Project from "../components/project";
 
 const ProjectsPage = (Comp) => {
   return (
     <PageBody>
-      Learn about some of my interesting projects
-
-      NASA Student launch computer vision
-      Genetic Fuzzy AI
-      AutoCall app
+      <Project 
+        title="AutoCall app" 
+      />
+      <Project 
+        title="Explainable Fuzzy Competition" 
+      />
+      <Project 
+        title="NASA Student launch computer vision" 
+      />
     </PageBody>
   );
 };
