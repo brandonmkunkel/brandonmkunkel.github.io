@@ -3,6 +3,8 @@ import { Document, Page, pdfjs } from 'react-pdf';
 
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
+import LinearProgress from '@mui/material/LinearProgress'
+
 import PageBody from '../components/page_body';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -17,11 +19,15 @@ const ResumePage = () => {
 
   return (
     <PageBody>
-      <div id="resume">
-        <Document file="assets/resume.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+        <Document 
+          file="assets/resume.pdf" 
+          loading={<LinearProgress />}
+          noData={<LinearProgress />}
+          onLoadSuccess={onDocumentLoadSuccess}
+          className="resume"
+        >
           <Page pageNumber={pageNumber} />
         </Document>
-      </div>
     </PageBody>
   );
 };
