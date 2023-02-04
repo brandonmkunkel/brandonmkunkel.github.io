@@ -2,23 +2,23 @@ import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
-import Brightness3Icon from '@mui/icons-material/Brightness3';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import NightsStayIcon from '@mui/icons-material/NightsStay';
 import Tooltip from '@mui/material/Tooltip';
 
 import useLocalStorage from './hooks/local_storage';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
-// const darkTheme = createTheme({
-//   palette: {
-//     mode: 'dark',
-//   },
-// });
-// const lightTheme = createTheme({
-//   palette: {
-//     mode: 'light',
-//   },
-// });
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+const lightTheme = createTheme({
+  palette: {
+    mode: 'light',
+  },
+});
 
 export function LightModeButton() {
   const theme = useTheme();
@@ -28,7 +28,7 @@ export function LightModeButton() {
     <Box sx={{ flexGrow: 0 }}>
       <Tooltip title="Toggle Theme">
         <IconButton sx={{ ml: 1 }} onClick={() => colorMode.toggleColorMode()} color="inherit">
-          {theme.palette.mode === 'dark' ? <Brightness3Icon /> : <Brightness7Icon />}
+          {theme.palette.mode === 'dark' ? <NightsStayIcon /> : <LightModeIcon />}
         </IconButton>
       </Tooltip>
     </Box>
@@ -48,11 +48,7 @@ export function ColorModeToggler({children}) {
 
   const theme = React.useMemo(
     () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
+      mode === 'dark' ? darkTheme: lightTheme,
     [mode],
   );
 
