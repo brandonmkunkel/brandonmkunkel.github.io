@@ -1,14 +1,16 @@
 import React from "react";
+import { Box } from "@mui/material";
+import { Container } from "react-bootstrap";
 
-// stateless footer
 const PageBody = ({ children }) => {
   return (
-    <div 
-    style={{
-      margin: 20,
-    }}>
-       {children}
-    </div>
+    <Container
+      sx={{
+        margin: { xs: 2, sm: 3, med: 3 },
+      }}
+    >
+      {children}
+    </Container>
   );
 };
 
