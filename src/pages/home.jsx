@@ -5,11 +5,10 @@ import ParticleBackground from "../components/particle_background"
 const HomePage = () => {
   return (
     <PageBody>
-        <div style={{position: "absolute", zIndex: 1}}>
+      <div style={{position: "absolute", zIndex: 1}}>
         <h1>Hello World</h1>
-        <div>Catchy tag line</div>
-        <div>Put an image somewhere</div>
-        <div>Some other thing</div>
+        <h2>Brandon Kunkel</h2>
+        <h2>I'll help you connect the dots</h2>
       </div>
 
       <ParticleBackground />

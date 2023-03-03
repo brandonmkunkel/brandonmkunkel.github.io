@@ -2,7 +2,6 @@ import React from "react";
 import Box from "@mui/material/Box";
 import PageBody from "../components/page_body";
 import Project from "../components/project";
-import { Grid } from "@mui/material";
 
 const ProjectsPage = (Comp) => {
   let placeholderImage = "https://via.placeholder.com/300";
