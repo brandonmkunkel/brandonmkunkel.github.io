@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import CssBaseline from '@mui/material/CssBaseline';
 
-import FooterComponent from "./components/footer";
 import DrawerAppBar from "./components/appbar";
 
 import HomePage from "./pages/home";
@@ -31,8 +30,7 @@ class App extends Component {
             <Route path="/resume" element={<ResumePage />} />
             <Route path="/not_found" element={<NotFoundPage />} />
             <Route path="*" element={<NotFoundPage />}/>
-          </Routes> 
-          <FooterComponent/>
+          </Routes>
         </Router>
       </ColorModeToggler>
     );

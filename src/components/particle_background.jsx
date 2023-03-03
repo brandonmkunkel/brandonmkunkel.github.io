@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 
-const ParticleBackground = () => {
+const ParticleBackground = ({theme}) => {
     const particlesInit = useCallback(async (engine) => {
         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
         // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -14,9 +14,7 @@ const ParticleBackground = () => {
 
     const particlesConfig = {
         background: {
-            color: {
-                value: "#000000",
-            },
+            color: "transparent",
         },
         fpsLimit: 120,
         interactivity: {
@@ -43,10 +41,10 @@ const ParticleBackground = () => {
         },
         particles: {
             color: {
-                value: "#ffffff",
+                value: theme.palette.mode === "dark" ? "#ffffff" : "#000000",
             },
             links: {
-                color: "#ffffff",
+                color: theme.palette.mode === "dark" ? "#ffffff" : "#000000",
                 distance: 150,
                 enable: true,
                 opacity: 0.5,
