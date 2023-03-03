@@ -5,7 +5,7 @@
 
 ## About
 
-Hello World! This repository is used to generate
+Hello World! This repository is used to generate my portfolio website hosted here [brandonmkunkel.github.io](https://brandonmkunkel.github.io)
 
 [![image](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/brandon-kunkel/)
 

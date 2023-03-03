@@ -20,23 +20,21 @@ import {ColorModeToggler} from "./theme";
 class App extends Component {
   render() {
     return (
-      <React.StrictMode>
-        <ColorModeToggler>
-          <CssBaseline />
-          <Router basename="/">
-            <DrawerAppBar />
-            <Routes>
-              <Route exact path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/resume" element={<ResumePage />} />
-              <Route path="/not_found" element={<NotFoundPage />} />
-              <Route path="*" element={<NotFoundPage />}/>
-            </Routes> 
-            <FooterComponent/>
-          </Router>
-        </ColorModeToggler>
-      </React.StrictMode>
+      <ColorModeToggler>
+        <CssBaseline />
+        <Router basename="/">
+          <DrawerAppBar />
+          <Routes>
+            <Route exact path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/resume" element={<ResumePage />} />
+            <Route path="/not_found" element={<NotFoundPage />} />
+            <Route path="*" element={<NotFoundPage />}/>
+          </Routes> 
+          <FooterComponent/>
+        </Router>
+      </ColorModeToggler>
     );
   }
 }
