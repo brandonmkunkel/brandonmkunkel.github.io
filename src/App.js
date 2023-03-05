@@ -25,10 +25,13 @@ class App extends Component {
           <DrawerAppBar />
           <Routes>
             <Route exact path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/resume" element={<ResumePage />} />
-            <Route path="/not_found" element={<NotFoundPage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="resume" element={<ResumePage />} />
+            <Route path="not_found" element={<NotFoundPage />} />
+
+            <Route path="projects" element={<ProjectsPage />} />
+            {/* <Route path="/:id" element={<NotFoundPage />} /> */}
+
             <Route path="*" element={<NotFoundPage />}/>
           </Routes>
         </Router>

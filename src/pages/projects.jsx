@@ -20,36 +20,30 @@ const ProjectsPage = (Comp) => {
           gridRowGap: { xs: 5, sm: 10 },
           gridColumnGap: { xs: 5, sm: 10 },
         }}
-        // sx={{
-        //   display: "flex",
-        //   flexWrap: "wrap",
-        //   // flexDirection: "row",
-        //   justifyContent: "space-evenly",
-        // }}
       >
         <Project
           imageSrc={placeholderImage}
           imageAlt="Image alt text"
           title="AutoCall app"
-          // route="/projects/autocall"
+          route="/projects/autocall"
         />
         <Project
           imageSrc={placeholderImage}
           imageAlt="Image alt text"
           title="Kaggle Submissions"
-          // route="/projects/kaggle"
+          route="/projects/kaggle"
         />
         <Project
           imageSrc={placeholderImage}
           imageAlt="Image alt text"
           title="Explainable Fuzzy Competition"
-          // route="/projects/xfc"
+          route="/projects/xfc"
         />
         <Project
           imageSrc={placeholderImage}
           imageAlt="Image alt text"
           title="NASA Student launch computer vision"
-          // route="/projects/nasa-student-launch"
+          route="/projects/nasa-student-launch"
         />
       </Box>
     </PageBody>
