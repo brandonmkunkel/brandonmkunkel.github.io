@@ -1,5 +1,5 @@
 import React from "react";
-import PageBody from "../components/page_body";
+import PageBody from "../layouts/page_body";
 import ParticleBackground from "../components/particle_background"
 
 import { useTheme } from '@mui/material/styles';
@@ -19,7 +19,7 @@ const HomePage = () => {
         <h2>Polyglot Software Engineer</h2>
         <h2>I'll help you connect the dots</h2>
       </Box>
-      
+
       <ParticleBackground theme={theme} />
     </PageBody>
   );

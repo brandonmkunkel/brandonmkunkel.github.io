@@ -1,5 +1,5 @@
 import React from "react";
-import PageBody from "../components/page_body";
+import PageBody from "../layouts/page_body";
 
 const AboutPage = () => {
   return (

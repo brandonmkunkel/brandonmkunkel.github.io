@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Card } from "@mui/material";
+import { Card, Link } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import { Link } from "@mui/material";
 
 // Stateless project component
 export const Project = ({ title, imageSrc, imageAlt, route }) => {

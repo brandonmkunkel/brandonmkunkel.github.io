@@ -3,11 +3,10 @@ import PageBody from "../components/page_body";
 
 const BlogPage = () => {
   return (
-    <PageBody>
-      <h1>Blog</h1>
+    <PageBody title="Blog">
       <p>This is where blog content goes</p>
     </PageBody>
   );
 };
 
-export default AboutPage;
+export default BlogPage;

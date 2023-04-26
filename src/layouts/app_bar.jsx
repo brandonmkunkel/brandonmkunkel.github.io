@@ -1,15 +1,8 @@
 import * as React from 'react';
 import { Link as RouterLink } from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
+import { Box, Divider, Drawer, Link, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -55,7 +48,6 @@ function DrawerAppBar(props) {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
           <IconButton
@@ -68,14 +60,18 @@ function DrawerAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" sx={{ my: 2, flexGrow: 1, display: { xs: 'block', sm: 'none' } }}>
+            <Link color="inherit" component={RouterLink} sx={{textDecoration:"none"}} to="/">
             Brandon Kunkel
+            </Link>
           </Typography>
           <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
+            <Link color="inherit" component={RouterLink} sx={{textDecoration:"none"}} to="/">
             Brandon Kunkel
+            </Link>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {Object.entries(navMap).map( ([page, route]) => (
@@ -113,4 +109,3 @@ function DrawerAppBar(props) {
 }
 
 export default DrawerAppBar;
-

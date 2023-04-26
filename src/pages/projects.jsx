@@ -1,14 +1,13 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import PageBody from "../components/page_body";
+import PageBody from "../layouts/page_body";
 import Project from "../components/project";
 
 const ProjectsPage = (Comp) => {
   let placeholderImage = "https://via.placeholder.com/300";
   return (
-    <PageBody>
+    <PageBody title="Projects">
       <Box
-        // container
         sx={{
           display: "grid",
           padding: { xs: 0, sm: 1 },
