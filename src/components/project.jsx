@@ -3,9 +3,9 @@ import { Card, Link } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 
 // Stateless project component
-export const Project = ({ title, imageSrc, imageAlt, route }) => {
+export const Project = ({ title, imageSrc, imageAlt, slug }) => {
   return (
-    <Link to={route} component={RouterLink} style={{ textDecoration: "none" }}>
+    <Link to={`projects/${slug}`} component={RouterLink} style={{ textDecoration: "none" }}>
       <Card
         className="project-container"
         sx={{

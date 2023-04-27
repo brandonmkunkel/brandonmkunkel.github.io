@@ -24,25 +24,25 @@ const ProjectsPage = (Comp) => {
           imageSrc={placeholderImage}
           imageAlt="Image alt text"
           title="AutoCall app"
-          route="/projects/autocall"
+          slug="auto_call"
         />
         <Project
           imageSrc={placeholderImage}
           imageAlt="Image alt text"
           title="Kaggle Submissions"
-          route="/projects/kaggle"
+          slug="kaggle"
         />
         <Project
           imageSrc={placeholderImage}
           imageAlt="Image alt text"
           title="Explainable Fuzzy Competition"
-          route="/projects/xfc"
+          slug="xfc"
         />
         <Project
           imageSrc={placeholderImage}
           imageAlt="Image alt text"
           title="NASA Student launch computer vision"
-          route="/projects/nasa-student-launch"
+          slug="nasa_student_launch"
         />
       </Box>
     </PageBody>

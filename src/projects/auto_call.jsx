@@ -1,10 +1,10 @@
 import React from "react";
 import PageBody from "../layouts/page_body";
 
-export const AutoCallPage = () => {
+const AutoCallPage = () => {
     return (
-        <PageBody>
-            <h1>Auto Call</h1>
+        <PageBody title="Auto Call">
         </PageBody>
     )
 }
+export default AutoCallPage;
