@@ -13,14 +13,17 @@ Hello World! This repository is used to generate my portfolio website hosted her
 
 ### Tech Stack
 
-- React (javascript)
+- React 
+- Typescript
 - Material UI library
 - Yarn
+- Vite
 
 ### Getting Started
 
 1. Install `homebrew`, `yarn`
 2. Install Dependencies: `yarn`
+3. Run the dev server - `yarn dev`
 
 ### CI/CD - Github Actions
 

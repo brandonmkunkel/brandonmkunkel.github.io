@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "21.6.2",
-    "npm": "9.2.0"
+    "node": "^21.6.2",
+    "npm": "^1.22.21"
   },
   "homepage": "https://brandonmkunkel.github.io/",
   "scripts": {
