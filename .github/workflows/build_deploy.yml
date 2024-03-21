@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ['main']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -16,7 +16,7 @@ permissions:
 
 # Allow one concurrent deployment
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
@@ -29,15 +29,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: NPM build
+
+      - name: Yarn build
         uses: actions/setup-node@v3
         with:
-          node-version: '19.x'
-      - name: NPM clean install dependencies
-        run: npm ci
-      - name: NPM build
-        run: npm run build --if-present
-          
+          node-version: '21.x'
+
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install --frozen-lockfile
+
+      - name: Build production bundle
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
+
+      - name: Test the app
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact

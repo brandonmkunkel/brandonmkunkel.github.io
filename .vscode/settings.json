@@ -3,8 +3,9 @@
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.formatOnSave": true,
-  "editor.renderFinalNewline": true,
+  "editor.renderFinalNewline": "on",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // Auto save 
-  "files.autoSave": "afterDelay",
+
+  // Auto save
+  "files.autoSave": "afterDelay"
 }

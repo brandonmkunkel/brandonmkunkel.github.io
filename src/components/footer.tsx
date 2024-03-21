@@ -1,7 +1,5 @@
-import React from "react";
-import { Link } from "@mui/material";
-import { Link as RouterLink } from "react-router-dom";
-import "../App.css";
+import { Link } from '@mui/material'
+import { Link as RouterLink } from 'react-router-dom'
 
 // stateless footer
 const FooterComponent = () => {
@@ -12,7 +10,7 @@ const FooterComponent = () => {
         Brandon Kunkel
       </Link>
     </footer>
-  );
-};
+  )
+}
 
-export default FooterComponent;
+export default FooterComponent

@@ -1,12 +1,11 @@
-import React from "react";
-import PageBody from "../components/page_body";
+import PageBody from '../components/pageBody'
 
 const BlogPage = () => {
   return (
     <PageBody title="Blog">
       <p>This is where blog content goes</p>
     </PageBody>
-  );
-};
+  )
+}
 
-export default BlogPage;
+export default BlogPage
