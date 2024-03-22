@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import CssBaseline from '@mui/material/CssBaseline'
 
@@ -35,13 +34,3 @@ export default function App() {
     </ColorModeToggler>
   )
 }
-
-// const ProjectLoader = ({ componentName, ...props }) => {
-//   const DynamicComponent = lazy(() => import(`./projects/${componentName}`));
-
-//   return (
-//     <Suspense fallback={<div>Loading...</div>}>
-//       <DynamicComponent {...props} />
-//     </Suspense>
-//   );
-// };

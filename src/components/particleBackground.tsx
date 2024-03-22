@@ -26,10 +26,6 @@ const ParticleBackground = () => {
     })
   }, [])
 
-  const particlesLoaded = (container: Container | undefined) => {
-    console.log(container)
-  }
-
   const particlesConfig: ISourceOptions = {
     background: {
       color: 'transparent',
@@ -101,15 +97,7 @@ const ParticleBackground = () => {
     detectRetina: true,
   }
 
-  return (
-    init && (
-      <Particles
-        id="tsparticles"
-        // particlesLoaded={particlesLoaded}
-        options={particlesConfig}
-      />
-    )
-  )
+  return init && <Particles id="tsparticles" options={particlesConfig} />
 }
 
 export default ParticleBackground

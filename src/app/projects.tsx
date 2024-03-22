@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box'
-import PageBody from '../../components/pageBody'
-import Project from '../../components/projectCard'
+import PageBody from '../components/pageBody'
+import Project from '../components/projectCard'
 
 type ProjectCardDetails = {
   imageSrc: string
@@ -19,8 +19,8 @@ const projects: ProjectCardDetails[] = [
   },
   {
     imageSrc: placeholderImage,
-    title: 'Kaggle',
-    slug: 'kaggle',
+    title: 'ML Apis',
+    slug: 'ml_apis',
   },
   {
     imageSrc: placeholderImage,

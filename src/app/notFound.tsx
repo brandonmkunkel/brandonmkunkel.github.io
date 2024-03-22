@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom'
 import PageBody from '../components/pageBody'
 
 const NotFoundPage = () => {
