@@ -3,11 +3,12 @@ import CssBaseline from '@mui/material/CssBaseline'
 
 import DrawerNavBar from './components/navBar'
 
-import HomePage from './app/home'
-import AboutPage from './app/about'
-import ProjectsPage from './app/projects'
-import ResumePage from './app/resume'
-import NotFoundPage from './app/notFound'
+import HomePage from './pages/home'
+import AboutPage from './pages/about'
+import ProjectPage from './components/project_renderer'
+import ProjectsPage from './pages/projects'
+import ResumePage from './pages/resume'
+import NotFoundPage from './pages/notFound'
 import { ColorModeToggler } from './theme'
 
 export default function App() {
@@ -24,7 +25,7 @@ export default function App() {
 
           <Route path="projects">
             <Route index element={<ProjectsPage />} />
-            <Route path=":id" element={<ProjectsPage />} />
+            <Route path=":id" element={<ProjectPage />} />
             {/* <Route path="xfc" element={<ProjectLoader />} /> */}
           </Route>
 

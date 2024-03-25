@@ -1,38 +1,7 @@
 import Box from '@mui/material/Box'
 import PageBody from '../components/pageBody'
 import Project from '../components/projectCard'
-
-type ProjectCardDetails = {
-  imageSrc: string
-  imageAlt?: string
-  title: string
-  slug: string
-}
-
-const placeholderImage = 'https://via.placeholder.com/300'
-
-const projects: ProjectCardDetails[] = [
-  {
-    imageSrc: placeholderImage,
-    title: 'AutoCall app',
-    slug: 'auto_call',
-  },
-  {
-    imageSrc: placeholderImage,
-    title: 'ML Apis',
-    slug: 'ml_apis',
-  },
-  {
-    imageSrc: placeholderImage,
-    title: 'Explainable Fuzzy Competition',
-    slug: 'xfc',
-  },
-  {
-    imageSrc: placeholderImage,
-    title: 'NASA Student Launch - Computer Vision',
-    slug: 'nasa_student_launch',
-  },
-]
+import { ProjectsToImport, ProjectCardDetails } from './projectList'
 
 const ProjectsPage = () => {
   return (
@@ -50,8 +19,9 @@ const ProjectsPage = () => {
           gridColumnGap: { xs: 5, sm: 10 },
         }}
       >
-        {projects.map((project: ProjectCardDetails) => (
+        {ProjectsToImport.map((project: ProjectCardDetails) => (
           <Project
+            key={project.title}
             imageSrc={project.imageSrc}
             imageAlt={project?.imageAlt ?? ''}
             title={project.title}

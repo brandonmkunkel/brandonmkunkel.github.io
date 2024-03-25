@@ -12,7 +12,7 @@ type ProjectProps = {
 export const Project = (props: ProjectProps) => {
   return (
     <Link
-      to={`projects/${props.slug}`}
+      to={`${props.slug}`}
       component={RouterLink}
       style={{ textDecoration: 'none' }}
     >
@@ -35,7 +35,7 @@ export const Project = (props: ProjectProps) => {
         />
         <div
           style={{
-            marginTop: 10,
+            margin: 5,
             textAlign: 'center',
             fontWeight: 'bold',
           }}
