@@ -1,18 +1,13 @@
 import * as React from 'react'
 import { Card, Link } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom'
-
-type ProjectProps = {
-  title: string
-  imageSrc: string
-  imageAlt: string
-  slug: string
-}
+import { Box } from '@mui/system'
+import { ProjectProps } from '../pages/projectList'
 
 export const Project = (props: ProjectProps) => {
   return (
     <Link
-      to={`${props.slug}`}
+      to={props.externalLink ?? props.slug ?? 'not_found'}
       component={RouterLink}
       style={{ textDecoration: 'none' }}
     >
@@ -22,6 +17,7 @@ export const Project = (props: ProjectProps) => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          padding: 1,
         }}
       >
         <img
@@ -33,15 +29,15 @@ export const Project = (props: ProjectProps) => {
             display: 'block',
           }}
         />
-        <div
+
+        <Box
           style={{
-            margin: 5,
             textAlign: 'center',
             fontWeight: 'bold',
           }}
         >
           {props.title}
-        </div>
+        </Box>
       </Card>
     </Link>
   )

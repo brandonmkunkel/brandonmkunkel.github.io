@@ -2,8 +2,7 @@ import PageBody from '../components/pageBody'
 
 const AboutPage = () => {
   return (
-    <PageBody>
-      <h1>About</h1>
+    <PageBody title="About">
       <div>Brandon is a guy from Ohio</div>
       <div>
         Started learning to code in high school when he worked on the school

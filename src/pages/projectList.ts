@@ -1,22 +1,23 @@
-export type ProjectCardDetails = {
-  imageSrc: string
-  imageAlt?: string
+export type ProjectProps = {
   title: string
-  slug: string
+  imageSrc?: string
+  imageAlt?: string
+  slug?: string
+  externalLink?: string
 }
 
 const placeholderImage = 'https://via.placeholder.com/300'
 
-export const ProjectsToImport: ProjectCardDetails[] = [
-  {
-    imageSrc: placeholderImage,
-    title: 'AutoCall app',
-    slug: 'auto_call',
-  },
+export const ProjectsToImport: ProjectProps[] = [
   {
     imageSrc: placeholderImage,
     title: 'ML Apis',
     slug: 'ml_apis',
+  },
+  {
+    imageSrc: placeholderImage,
+    title: 'AutoCall app',
+    slug: 'auto_call',
   },
   {
     imageSrc: placeholderImage,

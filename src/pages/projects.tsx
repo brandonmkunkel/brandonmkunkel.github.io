@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box'
 import PageBody from '../components/pageBody'
 import Project from '../components/projectCard'
-import { ProjectsToImport, ProjectCardDetails } from './projectList'
+import { ProjectsToImport, ProjectProps } from './projectList'
 
 const ProjectsPage = () => {
   return (
@@ -19,13 +19,14 @@ const ProjectsPage = () => {
           gridColumnGap: { xs: 5, sm: 10 },
         }}
       >
-        {ProjectsToImport.map((project: ProjectCardDetails) => (
+        {ProjectsToImport.map((project: ProjectProps) => (
           <Project
             key={project.title}
             imageSrc={project.imageSrc}
             imageAlt={project?.imageAlt ?? ''}
             title={project.title}
             slug={project.slug}
+            externalLink={project.externalLink}
           />
         ))}
       </Box>

@@ -13,8 +13,10 @@ export const ProjectPage = ({}) => {
   useEffect(() => {
     const importedProjects = new Map<string, React.ReactNode>()
     ProjectsToImport.forEach((project) => {
-      const View = importProject(project.slug)
-      importedProjects.set(project.slug, <View key={project.slug} />)
+      if (!!project.slug) {
+        const View = importProject(project.slug)
+        importedProjects.set(project.slug, <View key={project.slug} />)
+      }
     })
     setProjects(importedProjects)
   }, [])

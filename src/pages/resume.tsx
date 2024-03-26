@@ -6,7 +6,7 @@ import 'react-pdf/dist/esm/Page/TextLayer.css'
 import LinearProgress from '@mui/material/LinearProgress'
 
 import PageBody from '../components/pageBody'
-import ResumePDF from '../assets/resume.pdf'
+import ResumePDF from '../assets/Resume_BrandonKunkel.pdf'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
@@ -19,7 +19,7 @@ const ResumePage = () => {
   }
 
   return (
-    <PageBody title="Resume">
+    <PageBody>
       <Document
         file={ResumePDF}
         loading={<LinearProgress />}
@@ -27,7 +27,10 @@ const ResumePage = () => {
         onLoadSuccess={onDocumentLoadSuccess}
         className="resume"
       >
-        <Page pageNumber={pageNumber} />
+        <Page
+          pageNumber={pageNumber}
+          style={{ width: '50%', display: 'flex' }}
+        />
       </Document>
     </PageBody>
   )

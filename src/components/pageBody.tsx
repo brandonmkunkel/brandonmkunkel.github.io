@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react'
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 
 type PageBodyProps = {
   title?: string
@@ -9,11 +9,12 @@ const PageBody = (props: PropsWithChildren<PageBodyProps>) => {
   return (
     <Box
       sx={{
-        m: { xs: 1, sm: 1 },
-        pt: { xs: 1, sm: 1 },
+        margin: 1,
       }}
     >
-      <h1>{props.title}</h1>
+      <Typography variant="h4" component="h1" marginLeft={1}>
+        {props.title}
+      </Typography>
       {props.children}
     </Box>
   )
