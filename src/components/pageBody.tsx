@@ -1,22 +1,24 @@
 import { PropsWithChildren } from 'react'
-import { Box, Typography } from '@mui/material'
+import { Container, Typography } from '@mui/material'
 
 type PageBodyProps = {
   title?: string
+  sx?: React.CSSProperties
 }
 
-const PageBody = (props: PropsWithChildren<PageBodyProps>) => {
+const PageBody: React.FC<PropsWithChildren<PageBodyProps>> = (props) => {
   return (
-    <Box
+    <Container
       sx={{
-        margin: 1,
+        maxWidth: '1000',
+        ...props.sx,
       }}
     >
-      <Typography variant="h4" component="h1" marginLeft={1}>
+      <Typography variant="h4" component="h1" marginY={1}>
         {props.title}
       </Typography>
       {props.children}
-    </Box>
+    </Container>
   )
 }
 

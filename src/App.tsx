@@ -5,11 +5,13 @@ import DrawerNavBar from './components/navBar'
 
 import HomePage from './pages/home'
 import AboutPage from './pages/about'
-import ProjectPage from './components/project_renderer'
-import ProjectsPage from './pages/projects'
+import ProjectRenderer from './components/projectRenderer'
+import ProjectPage from './pages/project'
 import ResumePage from './pages/resume'
 import NotFoundPage from './pages/notFound'
 import { ColorModeToggler } from './theme'
+import BlogPage from './pages/blog'
+import BlogRenderer from './components/blogRenderer'
 
 export default function App() {
   return (
@@ -24,9 +26,13 @@ export default function App() {
           <Route path="not_found" element={<NotFoundPage />} />
 
           <Route path="projects">
-            <Route index element={<ProjectsPage />} />
-            <Route path=":id" element={<ProjectPage />} />
-            {/* <Route path="xfc" element={<ProjectLoader />} /> */}
+            <Route index element={<ProjectPage />} />
+            <Route path=":id" element={<ProjectRenderer />} />
+          </Route>
+
+          <Route path="blog">
+            <Route index element={<BlogPage />} />
+            <Route path=":id" element={<BlogRenderer />} />
           </Route>
 
           <Route path="*" element={<NotFoundPage />} />

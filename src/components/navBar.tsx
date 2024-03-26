@@ -22,8 +22,9 @@ const drawerWidth = 240
 const navMap = {
   Home: '/',
   About: '/about',
-  Projects: '/projects',
   Resume: '/resume',
+  // Projects: '/projects',
+  // Blog: '/blog',
 }
 
 function DrawerNavBar() {

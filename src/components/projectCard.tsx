@@ -2,12 +2,12 @@ import * as React from 'react'
 import { Card, Link } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom'
 import { Box } from '@mui/system'
-import { ProjectProps } from '../pages/projectList'
+import { ProjectProps, PlaceholderImage } from '../pages/projects'
 
-export const Project = (props: ProjectProps) => {
+export const ProjectCard = (props: ProjectProps) => {
   return (
     <Link
-      to={props.externalLink ?? props.slug ?? 'not_found'}
+      to={props.link}
       component={RouterLink}
       style={{ textDecoration: 'none' }}
     >
@@ -21,7 +21,7 @@ export const Project = (props: ProjectProps) => {
         }}
       >
         <img
-          src={props.imageSrc}
+          src={props.imageSrc ?? PlaceholderImage}
           alt={props.imageAlt}
           style={{
             maxWidth: '100%',
@@ -43,4 +43,4 @@ export const Project = (props: ProjectProps) => {
   )
 }
 
-export default Project
+export default ProjectCard

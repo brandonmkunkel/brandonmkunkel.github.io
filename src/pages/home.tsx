@@ -7,7 +7,7 @@ import linkedIn from '../assets/linkedin-logo.png'
 import github from '../assets/github-logo.svg'
 import githubWhite from '../assets/github-logo-white.svg'
 
-import { Box, Button, Stack, Link } from '@mui/material'
+import { Box, Stack, Link } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom'
 
 const HomePage = () => {
@@ -19,7 +19,7 @@ const HomePage = () => {
         direction={{ xs: 'column', sm: 'row' }}
         justifyContent="space-evenly"
         alignItems="center"
-        height="90vh"
+        height={'80vh'}
         sx={{ margin: 2 }}
       >
         <Stack direction="column" gap={1}>
@@ -30,7 +30,10 @@ const HomePage = () => {
           <Typography variant="h4">Fullstack Software Engineer</Typography>
 
           <Stack direction="row" gap={2} marginTop={5}>
-            <Link component={RouterLink} to={'www.linkedin.com/brandon.kunkel'}>
+            <Link
+              component={RouterLink}
+              to={'https://www.linkedin.com/in/brandon-kunkel/'}
+            >
               <img
                 src={linkedIn}
                 alt="LinkedIn"
@@ -40,7 +43,10 @@ const HomePage = () => {
               />
             </Link>
 
-            <Link component={RouterLink} to={'www.github.com/brandonmkunkel'}>
+            <Link
+              component={RouterLink}
+              to={'https://www.github.com/brandonmkunkel'}
+            >
               <img
                 src={theme.palette.mode === 'dark' ? githubWhite : github}
                 alt="Github"
@@ -58,7 +64,7 @@ const HomePage = () => {
           <img
             src={headshot}
             style={{
-              height: '500px',
+              width: '500px',
               borderRadius: '50%',
               aspectRatio: 1,
               display: 'block',

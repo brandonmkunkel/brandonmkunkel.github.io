@@ -1,15 +1,14 @@
 import Box from '@mui/material/Box'
 import PageBody from '../components/pageBody'
-import Project from '../components/projectCard'
-import { ProjectsToImport, ProjectProps } from './projectList'
+import ProjectCard from '../components/projectCard'
+import { ProjectsToImport, ProjectProps, PlaceholderImage } from './projects'
 
-const ProjectsPage = () => {
+const ProjectPage = () => {
   return (
     <PageBody title="Projects">
       <Box
         sx={{
           display: 'grid',
-          padding: { xs: 0, sm: 1 },
           gridTemplateColumns: {
             xs: 'repeat(1, 1fr)',
             sm: 'repeat(2, 1fr)',
@@ -20,13 +19,12 @@ const ProjectsPage = () => {
         }}
       >
         {ProjectsToImport.map((project: ProjectProps) => (
-          <Project
+          <ProjectCard
             key={project.title}
-            imageSrc={project.imageSrc}
-            imageAlt={project?.imageAlt ?? ''}
             title={project.title}
-            slug={project.slug}
-            externalLink={project.externalLink}
+            link={project.link}
+            imageSrc={project.imageSrc ?? PlaceholderImage}
+            imageAlt={project.imageAlt}
           />
         ))}
       </Box>
@@ -34,4 +32,4 @@ const ProjectsPage = () => {
   )
 }
 
-export default ProjectsPage
+export default ProjectPage
