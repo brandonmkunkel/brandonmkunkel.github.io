@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Particles, initParticlesEngine } from '@tsparticles/react'
-import type { Container, Engine, ISourceOptions } from '@tsparticles/engine'
+import type { Engine, ISourceOptions } from '@tsparticles/engine'
 import { loadFull } from 'tsparticles'
 import { useTheme } from '@mui/material'
 
