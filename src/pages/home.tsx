@@ -29,7 +29,7 @@ const HomePage = () => {
           <Typography variant="h2">I'm Brandon Kunkel</Typography>
           <Typography variant="h4">Fullstack Software Engineer</Typography>
 
-          <Stack direction="row" gap={2} marginTop={5}>
+          <Stack direction="row" gap={2} marginTop={3}>
             <Link
               component={RouterLink}
               to={'https://www.linkedin.com/in/brandon-kunkel/'}
@@ -60,14 +60,13 @@ const HomePage = () => {
           </Stack>
         </Stack>
 
-        <Box>
+        <Box width={{ xs: '300px', sm: '500px' }}>
           <img
             src={headshot}
             style={{
-              width: '500px',
+              width: '100%',
               borderRadius: '50%',
               aspectRatio: 1,
-              display: 'block',
             }}
           />
         </Box>

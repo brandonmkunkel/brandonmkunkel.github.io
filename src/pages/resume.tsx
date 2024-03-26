@@ -53,14 +53,9 @@ const ResumePage = () => {
         noData={<LinearProgress />}
         onLoadSuccess={onDocumentLoadSuccess}
         className="resume"
+        style={{ position: 'absolute' }}
       >
-        <Page
-          pageNumber={pageNumber}
-          style={{
-            position: 'absolute',
-            top: 80,
-          }}
-        />
+        <Page pageNumber={pageNumber} />
       </Document>
     </PageBody>
   )
