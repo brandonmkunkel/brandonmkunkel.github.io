@@ -70,6 +70,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    
     "plugins": [],
     "paths": {
       "@/*": ["./src/*"]

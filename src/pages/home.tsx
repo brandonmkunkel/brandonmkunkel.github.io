@@ -65,6 +65,7 @@ const HomePage = () => {
             style={{
               width: '100%',
               borderRadius: '50%',
+              objectFit: 'cover',
               aspectRatio: 1,
             }}
           />

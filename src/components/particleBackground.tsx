@@ -3,13 +3,11 @@
 import { useEffect, useState } from 'react'
 import { Particles, initParticlesEngine } from '@tsparticles/react'
 import type { Engine, ISourceOptions } from '@tsparticles/engine'
-import { loadFull } from 'tsparticles'
+import { loadSlim } from '@tsparticles/slim'
 import { useTheme } from '@mui/material'
 
 const ParticleBackground = () => {
   const theme = useTheme()
-
-  const [init, setInit] = useState(false)
 
   // this should be run only once per application lifetime
   useEffect(() => {
@@ -18,11 +16,9 @@ const ParticleBackground = () => {
       // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
       // starting from v2 you can add only the features you need reducing the bundle size
       //await loadAll(engine);
-      await loadFull(engine)
-      // await loadSlim(engine)
+      // await loadFull(engine)
+      await loadSlim(engine)
       //await loadBasic(engine);
-    }).then(() => {
-      setInit(true)
     })
   }, [])
 
@@ -95,7 +91,7 @@ const ParticleBackground = () => {
     detectRetina: true,
   }
 
-  return init && <Particles id="tsparticles" options={particlesConfig} />
+  return <Particles id="tsparticles" options={particlesConfig} />
 }
 
 export default ParticleBackground
