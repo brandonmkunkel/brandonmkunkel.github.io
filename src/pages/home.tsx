@@ -1,7 +1,6 @@
 import { Box, Stack, Link, Typography, useTheme } from '@mui/material'
 import PageBody from '../components/pageBody'
 import ParticleBackground from '../components/particleBackground'
-import MailtoButton from '../components/emailButton'
 import headshot from '../assets/headshot.jpg'
 import linkedIn from '../assets/linkedin-logo.png'
 import github from '../assets/github-logo.svg'
@@ -22,14 +21,23 @@ const HomePage = () => {
         height={'80vh'}
         sx={{ margin: 2 }}
       >
-        <Stack direction="column" gap={1}>
+        <Stack
+          direction="column"
+          gap={1}
+          textAlign={{ xs: 'center', sm: 'left' }}
+        >
           <Typography variant="h3" color={theme.palette.primary.main}>
             Hello World,
           </Typography>
           <Typography variant="h2">I'm Brandon Kunkel</Typography>
           <Typography variant="h4">Software Engineer</Typography>
 
-          <Stack direction="row" gap={3} marginTop={3}>
+          <Stack
+            direction="row"
+            gap={3}
+            marginTop={3}
+            justifyContent={{ xs: 'center', sm: 'left' }}
+          >
             <Link
               component={RouterLink}
               to={'https://www.linkedin.com/in/brandon-kunkel/'}
