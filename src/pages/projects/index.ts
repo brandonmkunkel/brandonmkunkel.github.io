@@ -1,3 +1,5 @@
+import xfcImage from '../../assets/projects/xfc.png'
+
 export type ProjectProps = {
   title: string
   link: string
@@ -9,15 +11,16 @@ export const PlaceholderImage = 'https://via.placeholder.com/300'
 
 export const ProjectsToImport: ProjectProps[] = [
   {
-    title: 'AutoCall app',
-    link: 'auto_call',
-  },
-  {
     title: 'Explainable Fuzzy Competition',
     link: 'xfc',
+    imageSrc: xfcImage,
   },
-  {
-    title: 'NASA Student Launch - Computer Vision',
-    link: 'nasa_student_launch',
-  },
+  // {
+  //   title: 'AutoCall app',
+  //   link: 'auto_call',
+  // },
+  // {
+  //   title: 'NASA Student Launch - Computer Vision',
+  //   link: 'nasa_student_launch',
+  // },
 ]

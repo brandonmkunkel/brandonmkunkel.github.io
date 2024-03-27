@@ -38,9 +38,8 @@
 
 .resume {
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  /* width: 50%; */
+  align-items: center;
+  justify-content: center;
 }
 
 #tsparticles {

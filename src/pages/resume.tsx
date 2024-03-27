@@ -8,7 +8,7 @@ import LinearProgress from '@mui/material/LinearProgress'
 import PageBody from '../components/pageBody'
 import ResumePDF from '../assets/Resume_BrandonKunkel.pdf'
 import { Fab } from '@mui/material'
-import { Save } from '@mui/icons-material'
+import { Download } from '@mui/icons-material'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
@@ -43,7 +43,7 @@ const ResumePage = () => {
           top: 80,
         }}
       >
-        <Save />
+        <Download />
         Download Resume
       </Fab>
 

@@ -23,7 +23,7 @@ const navMap = {
   Home: '/',
   About: '/about',
   Resume: '/resume',
-  // Projects: '/projects',
+  Projects: '/projects',
   // Blog: '/blog',
 }
 

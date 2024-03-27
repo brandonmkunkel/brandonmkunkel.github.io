@@ -1,6 +1,17 @@
 import { Typography } from '@mui/material'
 import PageBody from '../components/pageBody'
 
+// type Achievement = {
+//   label: string
+//   value: number
+// }
+// const Achievements: Achievement[] = [
+//   { label: 'Patents', value: 2 },
+//   { label: 'Papers Published', value: 4 },
+//   { label: 'Products Released', value: 6 },
+//   { label: 'Promotions', value: 2 },
+// ]
+
 const AboutPage = () => {
   return (
     <PageBody title="About">
@@ -27,6 +38,35 @@ const AboutPage = () => {
         love. I am eager to continue learning, honing my skills, and make an
         impact in your company and the industry. Let's do great things together.
       </Typography>
+      <br />
+
+      {/* <Typography variant="h4" component="h2" gutterBottom>
+        Achievements
+      </Typography>
+      <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap">
+        {Achievements.map((a) => {
+          return (
+            <Card
+              sx={{
+                width: 150,
+                height: 120,
+                padding: 1,
+                textAlign: 'center',
+                backgroundColor: theme.palette.divider,
+              }}
+            >
+              <Stack justifyContent="space-between">
+                <Typography variant="h5" component="div">
+                  {a.label}
+                </Typography>
+                <Typography variant="h5" component="div" color="text.secondary">
+                  {a.value}
+                </Typography>
+              </Stack>
+            </Card>
+          )
+        })}
+      </Stack> */}
     </PageBody>
   )
 }

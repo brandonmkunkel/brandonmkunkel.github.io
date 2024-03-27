@@ -1,4 +1,4 @@
-import { Typography, useTheme } from '@mui/material'
+import { Box, Stack, Link, Typography, useTheme } from '@mui/material'
 import PageBody from '../components/pageBody'
 import ParticleBackground from '../components/particleBackground'
 import MailtoButton from '../components/emailButton'
@@ -7,7 +7,6 @@ import linkedIn from '../assets/linkedin-logo.png'
 import github from '../assets/github-logo.svg'
 import githubWhite from '../assets/github-logo-white.svg'
 
-import { Box, Stack, Link } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom'
 
 const HomePage = () => {
@@ -27,7 +26,7 @@ const HomePage = () => {
             Hello World,
           </Typography>
           <Typography variant="h2">I'm Brandon Kunkel</Typography>
-          <Typography variant="h4">Fullstack Software Engineer</Typography>
+          <Typography variant="h4">Software Engineer</Typography>
 
           <Stack direction="row" gap={2} marginTop={3}>
             <Link

@@ -1,24 +1,23 @@
 import * as React from 'react'
-import { Card, Link } from '@mui/material'
+import { Card, Link, Typography } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom'
 import { Box } from '@mui/system'
 import { ProjectProps, PlaceholderImage } from '../pages/projects'
 
 export const ProjectCard = (props: ProjectProps) => {
   return (
-    <Link
-      to={props.link}
-      component={RouterLink}
-      style={{ textDecoration: 'none' }}
+    <Card
+      className="project-container"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
     >
-      <Card
-        className="project-container"
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          padding: 1,
-        }}
+      <Link
+        to={props.link}
+        component={RouterLink}
+        style={{ textDecoration: 'none' }}
       >
         <img
           src={props.imageSrc ?? PlaceholderImage}
@@ -31,15 +30,17 @@ export const ProjectCard = (props: ProjectProps) => {
         />
 
         <Box
-          style={{
+          sx={{
             textAlign: 'center',
-            fontWeight: 'bold',
+            padding: 1,
           }}
         >
-          {props.title}
+          <Typography fontWeight="bold" color="textPrimary">
+            {props.title}
+          </Typography>
         </Box>
-      </Card>
-    </Link>
+      </Link>
+    </Card>
   )
 }
 
