@@ -1,11 +1,8 @@
 {
-  // I want my default to be 4, but JavaScript/JSON to be 2
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.formatOnSave": true,
   "editor.renderFinalNewline": "on",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-
-  // Auto save
   "files.autoSave": "afterDelay"
 }
