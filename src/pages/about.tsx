@@ -1,18 +1,21 @@
-import { Typography } from '@mui/material'
+import { Card, CardContent, Stack, Typography, useTheme } from '@mui/material'
 import PageBody from '../components/pageBody'
+import { Box } from '@mui/system'
 
-// type Achievement = {
-//   label: string
-//   value: number
-// }
-// const Achievements: Achievement[] = [
-//   { label: 'Patents', value: 2 },
-//   { label: 'Papers Published', value: 4 },
-//   { label: 'Products Released', value: 6 },
-//   { label: 'Promotions', value: 2 },
-// ]
+type Achievement = {
+  label: string
+  value: number
+}
+const Achievements: Achievement[] = [
+  { label: 'Patents', value: 2 },
+  { label: 'Papers Published', value: 4 },
+  { label: 'Products Released', value: 6 },
+  { label: 'Promotions', value: 2 },
+]
 
 const AboutPage = () => {
+  const theme = useTheme()
+
   return (
     <PageBody title="About">
       <Typography>
@@ -40,7 +43,7 @@ const AboutPage = () => {
       </Typography>
       <br />
 
-      {/* <Typography variant="h4" component="h2" gutterBottom>
+      <Typography variant="h4" component="h2" gutterBottom>
         Achievements
       </Typography>
       <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap">
@@ -48,25 +51,30 @@ const AboutPage = () => {
           return (
             <Card
               sx={{
-                width: 150,
-                height: 120,
-                padding: 1,
+                width: 160,
+                height: 160,
                 textAlign: 'center',
                 backgroundColor: theme.palette.divider,
               }}
             >
-              <Stack justifyContent="space-between">
+              <CardContent
+                component={Stack}
+                direction="column"
+                alignItems="center"
+                justifyContent="space-between "
+                height="100%"
+              >
                 <Typography variant="h5" component="div">
                   {a.label}
                 </Typography>
-                <Typography variant="h5" component="div" color="text.secondary">
+                <Typography variant="h4" component="div" color="text.secondary">
                   {a.value}
                 </Typography>
-              </Stack>
+              </CardContent>
             </Card>
           )
         })}
-      </Stack> */}
+      </Stack>
     </PageBody>
   )
 }

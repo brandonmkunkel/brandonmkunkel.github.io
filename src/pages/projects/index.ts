@@ -11,16 +11,16 @@ export const PlaceholderImage = 'https://via.placeholder.com/300'
 
 export const ProjectsToImport: ProjectProps[] = [
   {
-    title: 'Explainable Fuzzy Competition',
+    title: 'Explainable Fuzzy Competition - 2021',
     link: 'xfc',
     imageSrc: xfcImage,
   },
   // {
-  //   title: 'AutoCall app',
+  //   title: 'AutoCall app - 2019',
   //   link: 'auto_call',
   // },
   // {
-  //   title: 'NASA Student Launch - Computer Vision',
+  //   title: 'NASA Student Launch - 2017',
   //   link: 'nasa_student_launch',
   // },
 ]
