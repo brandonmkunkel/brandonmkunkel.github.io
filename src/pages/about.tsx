@@ -1,6 +1,5 @@
 import { Card, CardContent, Stack, Typography, useTheme } from '@mui/material'
 import PageBody from '../components/pageBody'
-import { Box } from '@mui/system'
 
 type Achievement = {
   label: string
