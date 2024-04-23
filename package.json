@@ -45,7 +45,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "gh-pages": "^3.2.3",
+    "gh-pages": "^5.0.0",
     "prettier": "2.8.8",
     "typescript": "^5",
     "vite": "^5.2.0",
