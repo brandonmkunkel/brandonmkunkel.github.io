@@ -13,17 +13,18 @@ Hello World! This repository is used to generate my portfolio website hosted her
 
 ### Tech Stack
 
-- React 
+- React
 - Typescript
 - Material UI library
-- Yarn
+- pnpm
 - Vite
 
 ### Getting Started
 
-1. Install `homebrew`, `yarn`
-2. Install Dependencies: `yarn`
-3. Run the dev server - `yarn dev`
+1. Install `homebrew`
+2. `brew install pnpm`
+3. Install Dependencies: `pnpm install`
+4. Run the dev server - `pnpm dev`
 
 ### CI/CD - Github Actions
 
