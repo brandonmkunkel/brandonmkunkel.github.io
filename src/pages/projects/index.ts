@@ -12,7 +12,7 @@ export const PlaceholderImage = 'https://via.placeholder.com/300'
 export const ProjectsToImport: ProjectProps[] = [
   {
     title: 'Personal Recipes Site',
-    link: 'recipes',
+    link: 'https://brandonmkunkel.github.io/recipes',
   },
   {
     title: 'Explainable Fuzzy Competition - 2021',
