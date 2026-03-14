@@ -1,4 +1,5 @@
 import xfcImage from '../../assets/projects/xfc.png'
+import recipesImage from '../../assets/projects/recipes.jpg'
 
 export type ProjectProps = {
   title: string
@@ -13,18 +14,11 @@ export const ProjectsToImport: ProjectProps[] = [
   {
     title: 'Personal Recipes Site',
     link: 'https://brandonmkunkel.github.io/recipes',
+    imageSrc: recipesImage,
   },
   {
     title: 'Explainable Fuzzy Competition - 2021',
     link: 'xfc',
     imageSrc: xfcImage,
   },
-  // {
-  //   title: 'AutoCall app - 2019',
-  //   link: 'auto_call',
-  // },
-  // {
-  //   title: 'NASA Student Launch - 2017',
-  //   link: 'nasa_student_launch',
-  // },
 ]
