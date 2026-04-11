@@ -13,11 +13,10 @@ Hello World! This repository is used to generate my portfolio website hosted her
 
 ### Tech Stack
 
-- React
+- Astro
 - Typescript
 - Material UI library
 - pnpm
-- Vite
 
 ### Getting Started
 

@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ParticleBackground from '../components/ParticleBackground.astro';
+
+import headshot from '../assets/headshot.jpg';
+import linkedIn from '../assets/linkedin-logo.png';
+import github from '../assets/github-logo.svg';
+import githubWhite from '../assets/github-logo-white.svg';
+
+// The Github logo needs to toggle based on theme in Astro (HTML output)
+// We will handle the toggling via CSS
+---
+
+<Layout title="Home">
+  <div class="home-container">
+    <ParticleBackground />
+    
+    <div class="home-content animate-fade-in">
+      <div class="intro">
+        <h3 class="hello">Hello World,</h3>
+        <h2 class="name">I'm Brandon Kunkel</h2>
+        <h4 class="title">Software Engineer</h4>
+        
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/brandon-kunkel/" target="_blank" rel="noopener noreferrer">
+            <img src={linkedIn.src} alt="LinkedIn" class="social-icon" />
+          </a>
+          
+          <a href="https://www.github.com/brandonmkunkel" target="_blank" rel="noopener noreferrer" class="github-link">
+            <!-- Using standard github dark logo here, the white one is toggled via CSS in dark mode -->
+            <img src={github.src} alt="Github" class="social-icon github-dark" />
+            <img src={githubWhite.src} alt="Github" class="social-icon github-light" />
+          </a>
+
+          <a href="mailto:brandonmkunkel@gmail.com" class="email-link">
+             <svg viewBox="0 0 24 24" class="social-icon email-icon"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="headshot-container">
+        <img src={headshot.src} alt="Brandon Kunkel" class="headshot" />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .home-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    z-index: 1; /* Above particles */
+  }
+  
+  @media (min-width: 768px) {
+    .home-content {
+      flex-direction: row;
+    }
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .intro {
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+
+  .hello {
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
+  
+  .name {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+  
+  @media (min-width: 768px) {
+    .social-links {
+      justify-content: flex-start;
+    }
+  }
+
+  .social-icon {
+    height: 40px;
+    width: 40px;
+    transition: transform 0.2s ease;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .email-icon {
+    color: var(--text-color);
+  }
+
+  /* Theme-based Github logo swapping */
+  .github-light { display: none; }
+  .github-dark { display: block; }
+  
+  :global([data-theme='dark']) .github-light { display: block; }
+  :global([data-theme='dark']) .github-dark { display: none; }
+
+  .headshot-container {
+    width: 300px;
+  }
+  
+  @media (min-width: 768px) {
+    .headshot-container {
+      width: 500px;
+      max-width: 50%;
+    }
+  }
+
+  .headshot {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary); /* Added premium border touch */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+</style>

@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResumePDF from '../assets/Resume_BrandonKunkel.pdf';
+---
+
+<Layout title="Resume">
+  <div class="resume-container animate-fade-in">
+    <h1 class="page-title">Resume</h1>
+    
+    <div class="resume-content">
+      <p>Select an option below to view or download my resume.</p>
+      
+      <div class="actions">
+        <!-- Allows viewing the PDF directly within the browser natively -->
+        <a href={ResumePDF} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          View in New Tab
+        </a>
+        
+        <!-- Triggers download of the PDF file -->
+        <a href={ResumePDF} download="Resume_BrandonKunkel.pdf" class="btn btn-secondary">
+          <svg viewBox="0 0 24 24" width="20" height="20" class="download-icon"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .resume-container {
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+  }
+
+  .resume-content {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+
+  .resume-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media (min-width: 480px) {
+    .actions {
+      flex-direction: row;
+    }
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--primary);
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(25, 118, 210, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .download-icon {
+    display: inline-block;
+  }
+</style>

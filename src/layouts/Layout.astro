@@ -1,0 +1,54 @@
+---
+import NavBar from '../components/NavBar.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Brandon Kunkel - Software Engineer Portfolio" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Brandon Kunkel</title>
+    
+    <!-- Theme setup script: Runs early to prevent FOUC -->
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      })();
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+      window.localStorage.setItem('theme', theme);
+    </script>
+  </head>
+  <body>
+    <NavBar />
+    <main>
+      <slot />
+    </main>
+    <footer style="display: flex; justify-content: center; align-items: center; gap: 0.75rem; padding: 0.75rem; margin-top: auto; flex-wrap: wrap;">
+      <span>&copy; {new Date().getFullYear()} Brandon Kunkel</span>
+      <span style="opacity: 0.5;">|</span>
+      <a href="https://github.com/brandonmkunkel/brandonmkunkel.github.io" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; color: var(--text-color); opacity: 0.7;">View Source on GitHub</a>
+    </footer>
+  </body>
+</html>

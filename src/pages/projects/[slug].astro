@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const allProjects = await getCollection('projects');
+  return allProjects.map(project => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+<Layout title={project.data.title}>
+  <div class="project-detail animate-fade-in">
+    <div class="header">
+      <h1 class="page-title">{project.data.title}</h1>
+      <div class="actions">
+        {project.data.link && (
+          <a href={project.data.link} class="btn" target="_blank" rel="noopener noreferrer">Website</a>
+        )}
+        {project.data.github && (
+          <a href={project.data.github} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Github</a>
+        )}
+      </div>
+    </div>
+    <div class="content">
+      <Content />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .project-detail {
+    padding: 2rem 0;
+  }
+  
+  .header {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--primary);
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(25, 118, 210, 0.1);
+  }
+
+  .content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+</style>

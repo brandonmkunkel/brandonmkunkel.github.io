@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 Not Found">
+  <div class="container animate-fade-in">
+    <h1 class="title">404</h1>
+    <h2 class="subtitle">Not Found</h2>
+    <p class="description">
+      Oh hey there, where do you think you are going, that page does not exist.
+    </p>
+    <a href="/" class="btn">Return to Home</a>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 50vh;
+    padding: 2rem 0;
+  }
+
+  .title {
+    font-size: 6rem;
+    color: var(--primary);
+    margin-bottom: 0;
+    line-height: 1;
+  }
+
+  .subtitle {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+</style>

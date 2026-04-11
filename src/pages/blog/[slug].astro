@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const allBlogs = await getCollection('blog');
+  return allBlogs.map(blog => ({
+    params: { slug: blog.slug },
+    props: { blog },
+  }));
+}
+
+const { blog } = Astro.props;
+const { Content } = await blog.render();
+---
+<Layout title={blog.data.title}>
+  <div class="project-detail animate-fade-in">
+    <div class="header">
+      <h1 class="page-title">{blog.data.title}</h1>
+    </div>
+    <div class="content">
+      <Content />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .project-detail {
+    padding: 2rem 0;
+  }
+  
+  .header {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+</style>
