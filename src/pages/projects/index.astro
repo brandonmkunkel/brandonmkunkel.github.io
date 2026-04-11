@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allProjects = await getCollection('projects');
+---
+<Layout title="Projects">
+  <div class="projects-container animate-fade-in">
+    <h1 class="page-title">Projects</h1>
+    <div class="grid">
+      {allProjects.map((project) => (
+        <a 
+          href={project.data.link?.startsWith('http') ? project.data.link : `/projects/${project.slug}`} 
+          class="card" 
+          target={project.data.link?.startsWith('http') ? '_blank' : '_self'}
+          rel={project.data.link?.startsWith('http') ? 'noopener noreferrer' : ''}
+        >
+          <img src={project.data.imageSrc || 'https://placehold.co/300x300'} alt={project.data.title} />
+          <div class="card-content">
+            <h2 class="card-title">{project.data.title}</h2>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .projects-container {
+    padding: 2rem 0;
+  }
+  .page-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+  }
+</style>

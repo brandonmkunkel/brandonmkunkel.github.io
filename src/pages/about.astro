@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const achievements = [
+  { label: 'Patents', value: 2 },
+  { label: 'Papers Published', value: 4 },
+  { label: 'Products Released', value: 6 },
+  { label: 'Promotions', value: 2 },
+];
+---
+
+<Layout title="About">
+  <div class="page-container animate-fade-in">
+    <h1 class="page-title">About</h1>
+    
+    <div class="content">
+      <p>
+        I originally studied Aerospace Engineering for my Bachelors and used
+        my coding experiences in college to transition to Software Engineering
+        as a career. My career started in AI/ML at Psibernetix where we worked
+        on a novel technique called the Genetic Fuzzy Tree, where I advanced the
+        technique by optimizing and improving features of our toolkit, as well
+        as building models to apply the technique to a variety of applications.
+      </p>
+      
+      <p>
+        But 4 years into my career I identified some glaring holes in my
+        skillset and sought out new opportunities to gain frontend, backend,
+        distributed systems and cloud technologies. In my 7 years at 3 startups,
+        I have seen promotions, product releases, an acquisition, layoffs and a
+        company closure.
+      </p>
+      
+      <p>
+        Throughout my professional experiences I learned to be resilient, solve
+        difficult problems, mentor engineers, and make products that users
+        love. I am eager to continue learning, honing my skills, and make an
+        impact in your company and the industry. Let's do great things together.
+      </p>
+    </div>
+
+    <h2 class="section-title">Achievements</h2>
+    <div class="achievements-grid">
+      {achievements.map((achievement) => (
+        <div class="achievement-card">
+          <h3 class="achievement-label">{achievement.label}</h3>
+          <p class="achievement-value">{achievement.value}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    padding: 2rem 0;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  .content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .achievements-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .achievement-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .achievement-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .achievement-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .achievement-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+</style>
