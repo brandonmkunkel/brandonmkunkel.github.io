@@ -20,9 +20,9 @@ Hello World! This repository is used to generate my portfolio website hosted her
 ### Getting Started
 
 1. Install `homebrew`
-2. `brew install pnpm`
-3. Install Dependencies: `pnpm install`
-4. Run the dev server - `pnpm dev`
+2. `brew install yarn`
+3. Install Dependencies: `yarn install`
+4. Run the dev server - `yarn dev`
 
 ### CI/CD - Github Actions
 
