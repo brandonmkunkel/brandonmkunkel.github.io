@@ -1,6 +1,7 @@
 # Agent Instructions
 
 ## Repo layout
+
 - `.github/workflows/` - CI/CD deployment pipelines to publish GitHub Pages.
 - `src/` - Core Astro application code
   - `assets/` - Un-optimized local assets (images, icons) strictly processed by Astro's optimized image pipelines at build-time.

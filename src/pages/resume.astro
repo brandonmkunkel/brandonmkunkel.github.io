@@ -1,24 +1,37 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ResumePDF from '../assets/Resume_BrandonKunkel.pdf';
+import Layout from '../layouts/Layout.astro'
+import ResumePDF from '../assets/Resume_BrandonKunkel.pdf'
 ---
 
 <Layout title="Resume">
   <div class="resume-container animate-fade-in">
     <h1 class="page-title">Resume</h1>
-    
+
     <div class="resume-content">
       <p>Select an option below to view or download my resume.</p>
-      
+
       <div class="actions">
         <!-- Allows viewing the PDF directly within the browser natively -->
-        <a href={ResumePDF} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <a
+          href={ResumePDF}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
           View in New Tab
         </a>
-        
+
         <!-- Triggers download of the PDF file -->
-        <a href={ResumePDF} download="Resume_BrandonKunkel.pdf" class="btn btn-secondary">
-          <svg viewBox="0 0 24 24" width="20" height="20" class="download-icon"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        <a
+          href={ResumePDF}
+          download="Resume_BrandonKunkel.pdf"
+          class="btn btn-secondary"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" class="download-icon"
+            ><path
+              fill="currentColor"
+              d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"></path></svg
+          >
           Download Resume
         </a>
       </div>
@@ -31,7 +44,7 @@ import ResumePDF from '../assets/Resume_BrandonKunkel.pdf';
     padding: 2rem 0;
     text-align: center;
   }
-  
+
   .page-title {
     font-size: 2.5rem;
     color: var(--primary);
@@ -45,7 +58,7 @@ import ResumePDF from '../assets/Resume_BrandonKunkel.pdf';
     padding: 3rem 2rem;
     max-width: 600px;
     margin: 0 auto;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
 
   .resume-content p {
@@ -60,7 +73,7 @@ import ResumePDF from '../assets/Resume_BrandonKunkel.pdf';
     justify-content: center;
     align-items: center;
   }
-  
+
   @media (min-width: 480px) {
     .actions {
       flex-direction: row;

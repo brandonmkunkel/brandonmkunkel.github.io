@@ -1,31 +1,43 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
 
-const allProjects = await getCollection('projects');
+const allProjects = await getCollection('projects')
 ---
+
 <Layout title="Projects">
   <div class="projects-container animate-fade-in">
     <h1 class="page-title">Projects</h1>
     <div class="grid">
-      {allProjects.map((project) => (
-        <a 
-          href={project.data.link?.startsWith('http') ? project.data.link : `/projects/${project.slug}`} 
-          class="card" 
-          target={project.data.link?.startsWith('http') ? '_blank' : '_self'}
-          rel={project.data.link?.startsWith('http') ? 'noopener noreferrer' : ''}
-        >
-          {project.data.imageSrc ? (
-            <Image src={project.data.imageSrc} alt={project.data.title} />
-          ) : (
-            <img src="https://placehold.co/300x300" alt={project.data.title} />
-          )}
-          <div class="card-content">
-            <h2 class="card-title">{project.data.title}</h2>
-          </div>
-        </a>
-      ))}
+      {
+        allProjects.map((project) => (
+          <a
+            href={
+              project.data.link?.startsWith('http')
+                ? project.data.link
+                : `/projects/${project.slug}`
+            }
+            class="card"
+            target={project.data.link?.startsWith('http') ? '_blank' : '_self'}
+            rel={
+              project.data.link?.startsWith('http') ? 'noopener noreferrer' : ''
+            }
+          >
+            {project.data.imageSrc ? (
+              <Image src={project.data.imageSrc} alt={project.data.title} />
+            ) : (
+              <img
+                src="https://placehold.co/300x300"
+                alt={project.data.title}
+              />
+            )}
+            <div class="card-content">
+              <h2 class="card-title">{project.data.title}</h2>
+            </div>
+          </a>
+        ))
+      }
     </div>
   </div>
 </Layout>

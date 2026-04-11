@@ -1,20 +1,23 @@
 ---
+
 ---
+
 <div id="tsparticles"></div>
 
 <script>
-  import { tsParticles } from "@tsparticles/engine";
-  import { loadSlim } from "@tsparticles/slim";
+  import { tsParticles } from '@tsparticles/engine'
+  import { loadSlim } from '@tsparticles/slim'
 
   async function loadParticles() {
-    await loadSlim(tsParticles);
+    await loadSlim(tsParticles)
 
     // Initial color matching the current theme or defaulting to dark
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    const pColor = currentTheme === 'dark' ? '#ffffff' : '#000000';
+    const currentTheme =
+      document.documentElement.getAttribute('data-theme') || 'dark'
+    const pColor = currentTheme === 'dark' ? '#ffffff' : '#000000'
 
     await tsParticles.load({
-      id: "tsparticles",
+      id: 'tsparticles',
       options: {
         background: { color: 'transparent' },
         fpsLimit: 60,
@@ -55,29 +58,29 @@
           size: { value: { min: 1, max: 3 } },
         },
         detectRetina: true,
-      }
-    });
+      },
+    })
   }
 
-  loadParticles();
+  loadParticles()
 
   // Handle theme changes using a MutationObserver
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       if (mutation.attributeName === 'data-theme') {
-        const newTheme = document.documentElement.getAttribute('data-theme');
-        const newColor = newTheme === 'dark' ? '#ffffff' : '#000000';
-        const container = tsParticles.domItem(0);
+        const newTheme = document.documentElement.getAttribute('data-theme')
+        const newColor = newTheme === 'dark' ? '#ffffff' : '#000000'
+        const container = tsParticles.domItem(0)
         if (container) {
-          container.options.particles.color.value = newColor;
+          container.options.particles.color.value = newColor
           // container.options.particles.links.color = newColor;
-          container.refresh();
+          container.refresh()
         }
       }
-    });
-  });
+    })
+  })
 
-  observer.observe(document.documentElement, { attributes: true });
+  observer.observe(document.documentElement, { attributes: true })
 </script>
 
 <style>

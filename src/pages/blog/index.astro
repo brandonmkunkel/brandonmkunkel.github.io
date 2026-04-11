@@ -1,26 +1,29 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
 
-const allBlogs = await getCollection('blog');
+const allBlogs = await getCollection('blog')
 ---
+
 <Layout title="Blog">
   <div class="projects-container animate-fade-in">
     <h1 class="page-title">Blog</h1>
-    {allBlogs.length > 0 ? (
-      <div class="grid">
-        {allBlogs.map((blog) => (
-          <a href={`/blog/${blog.slug}`} class="card">
-            <div class="card-content">
-              <h2 class="card-title">{blog.data.title}</h2>
-              {blog.data.description && <p>{blog.data.description}</p>}
-            </div>
-          </a>
-        ))}
-      </div>
-    ) : (
-      <p>No blog posts yet. Check back later!</p>
-    )}
+    {
+      allBlogs.length > 0 ? (
+        <div class="grid">
+          {allBlogs.map((blog) => (
+            <a href={`/blog/${blog.slug}`} class="card">
+              <div class="card-content">
+                <h2 class="card-title">{blog.data.title}</h2>
+                {blog.data.description && <p>{blog.data.description}</p>}
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p>No blog posts yet. Check back later!</p>
+      )
+    }
   </div>
 </Layout>
 

@@ -4,5 +4,14 @@
   "editor.formatOnSave": true,
   "editor.renderFinalNewline": "on",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.autoSave": "afterDelay"
+  "files.autoSave": "afterDelay",
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
