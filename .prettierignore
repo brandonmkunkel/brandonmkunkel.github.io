@@ -3,6 +3,8 @@ build
 coverage
 .next
 node_modules
+.astro
+dist
 
 # Ignore all HTML files:
 **/*.html
