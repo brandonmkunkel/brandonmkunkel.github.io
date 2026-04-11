@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
 const allProjects = await getCollection('projects');
@@ -15,7 +16,11 @@ const allProjects = await getCollection('projects');
           target={project.data.link?.startsWith('http') ? '_blank' : '_self'}
           rel={project.data.link?.startsWith('http') ? 'noopener noreferrer' : ''}
         >
-          <img src={project.data.imageSrc || 'https://placehold.co/300x300'} alt={project.data.title} />
+          {project.data.imageSrc ? (
+            <Image src={project.data.imageSrc} alt={project.data.title} />
+          ) : (
+            <img src="https://placehold.co/300x300" alt={project.data.title} />
+          )}
           <div class="card-content">
             <h2 class="card-title">{project.data.title}</h2>
           </div>

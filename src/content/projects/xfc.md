@@ -2,7 +2,7 @@
 title: "Explainable Fuzzy Competition - 2021"
 link: "https://xfuzzycomp.github.io/XFC/"
 github: "https://github.com/xfuzzycomp"
-imageSrc: "/projects/xfc.png"
+imageSrc: "../../assets/projects/xfc.png"
 ---
 I helped start the Explainable Fuzzy Competition in 2021 during my time at Thales. This open-source competition was a collaboration between NAFIPS, the University of Cincinnati and Thales and the goal was to further evangelize the genetic fuzzy AI techniques we developed at Psibernetix at the university level to encourage students to continue researching the topic.
 
