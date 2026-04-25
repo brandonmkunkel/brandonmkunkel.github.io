@@ -73,6 +73,18 @@ h6 {
   font-weight: 600;
 }
 
+p,
+ul,
+ol,
+blockquote {
+  margin-bottom: 1rem;
+}
+
+ul,
+ol {
+  padding-left: 2rem;
+}
+
 /* Button styles */
 .btn {
   display: inline-block;
