@@ -3,6 +3,7 @@ title: 'Explainable Fuzzy Competition - 2021'
 github: 'https://github.com/xfuzzycomp'
 imageSrc: '../../assets/projects/xfc.png'
 date: '2021-01-01'
+description: A competition that we ran at Thales with a local University to foster interest in fuzzy AI.
 ---
 
 [See the official XFC Website!](https://xfuzzycomp.github.io/XFC/)

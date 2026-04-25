@@ -38,6 +38,9 @@ const allProjects = (await getCollection('projects')).sort((a, b) => {
             )}
             <div class="card-content">
               <h2 class="card-title">{project.data.title}</h2>
+              {project.data.description && (
+                <p class="card-description">{project.data.description}</p>
+              )}
             </div>
           </a>
         ))
@@ -54,5 +57,14 @@ const allProjects = (await getCollection('projects')).sort((a, b) => {
     font-size: 2.5rem;
     color: var(--primary);
     margin-bottom: 2rem;
+  }
+  .card-description {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 0;
+    margin-top: 0.25rem;
+    line-height: 1.4;
   }
 </style>
