@@ -3,7 +3,11 @@ import Layout from '../../layouts/Layout.astro'
 import { Image } from 'astro:assets'
 import { getCollection } from 'astro:content'
 
-const allProjects = await getCollection('projects')
+const allProjects = (await getCollection('projects')).sort((a, b) => {
+  const dateA = a.data.date ? new Date(a.data.date).valueOf() : 0
+  const dateB = b.data.date ? new Date(b.data.date).valueOf() : 0
+  return dateB - dateA
+})
 ---
 
 <Layout title="Projects">
