@@ -19,3 +19,4 @@
   - `yarn format`
   - `yarn build`
   - `yarn preview`
+- After updating `package.json`, run `yarn install`
